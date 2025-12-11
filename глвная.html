@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Аэропорт "Восток"</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <a href="глвная.html" class="nav-link active">Главная</a>
+            <a href="Путеводитель.html" class="nav-link">Путеводитель</a>
+            <a href="Трансфер.html" class="nav-link">Трансфер</a>
+        </nav>
+        <div class="header-icons">
+            <i class="fas fa-search icon"></i>
+            <a href="Личный кабинет.html" title="Личный кабинет"><i class="fas fa-user icon"></i></a>
+        </div>
+    </header>
+
+    <main class="main-content container">
+        <h1 class="airport-title">Аэропорт "Восток"</h1>
+        
+        <section class="hero-section">
+            <div class="hero-text-container">
+                <div class="hero-text">
+                    <h2>Твое путешествие начинается здесь!</h2>
+                </div>
+            </div>
+            <img src="C:\Users\polin\OneDrive\Рабочий стол\главное фото.png" alt="Аэропорт" class="hero-image">
+        </section>
+
+        <div class="button-container mb-4">
+            <button class="flight-button">Вылет/прилет</button>
+        </div>
+
+        <div class="row mb-4">
+            <div class="col-md-12">
+                <div class="card border-0 shadow-sm">
+                    <div class="card-body">
+                        <div class="row align-items-center">
+                            <div class="col-md-4 mb-3 mb-md-0">
+                                <h5 class="mb-0"><i class="fas fa-terminal me-2 text-primary"></i>Фильтр по терминалу</h5>
+                            </div>
+                            <div class="col-md-8">
+                                <div class="d-flex flex-wrap gap-2">
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input terminal-filter" type="checkbox" id="terminal-all" value="all" checked>
+                                        <label class="form-check-label btn btn-outline-primary" for="terminal-all">
+                                            Все терминалы
+                                        </label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input terminal-filter" type="checkbox" id="terminal-a" value="A">
+                                        <label class="form-check-label btn btn-outline-primary" for="terminal-a">
+                                            <i class="fas fa-building me-1"></i> Терминал A
+                                        </label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input terminal-filter" type="checkbox" id="terminal-b" value="B">
+                                        <label class="form-check-label btn btn-outline-primary" for="terminal-b">
+                                            <i class="fas fa-building me-1"></i> Терминал B
+                                        </label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input terminal-filter" type="checkbox" id="terminal-c" value="C">
+                                        <label class="form-check-label btn btn-outline-primary" for="terminal-c">
+                                            <i class="fas fa-building me-1"></i> Терминал C
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="flights-table mb-5">
+            <div class="table-responsive">
+                <table class="table table-hover table-striped align-middle" id="flights-table">
+                    <thead class="table-light">
+                        <tr>
+                            <th scope="col" class="text-nowrap">Номер рейса</th>
+                            <th scope="col" class="text-nowrap">Направление</th>
+                            <th scope="col" class="text-nowrap">Время</th>
+                            <th scope="col" class="text-nowrap">Статус</th>
+                            <th scope="col" class="text-nowrap">Терминал</th>
+                            <th scope="col" class="text-nowrap">Фактическое время</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr data-terminal="A">
+                            <td><span class="badge bg-primary">SU 1234</span></td>
+                            <td><i class="fas fa-plane-departure me-2"></i>Москва</td>
+                            <td>10:30</td>
+                            <td><span class="badge bg-info">Регистрация</span></td>
+                            <td><span class="badge bg-secondary terminal-badge" data-terminal="A">A</span></td>
+                            <td>10:30</td>
+                        </tr>
+                        <tr data-terminal="B">
+                            <td><span class="badge bg-primary">FV 567</span></td>
+                            <td><i class="fas fa-plane-departure me-2"></i>Сочи</td>
+                            <td>11:45</td>
+                            <td><span class="badge bg-success">Вылетел</span></td>
+                            <td><span class="badge bg-secondary terminal-badge" data-terminal="B">B</span></td>
+                            <td>11:40</td>
+                        </tr>
+                        <tr data-terminal="C">
+                            <td><span class="badge bg-primary">DP 890</span></td>
+                            <td><i class="fas fa-plane-departure me-2"></i>Казань</td>
+                            <td>13:00</td>
+                            <td><span class="badge bg-warning text-dark">Ожидание</span></td>
+                            <td><span class="badge bg-secondary terminal-badge" data-terminal="C">C</span></td>
+                            <td>13:00</td>
+                        </tr>
+                        <tr data-terminal="A">
+                            <td><span class="badge bg-primary">UT 112</span></td>
+                            <td><i class="fas fa-plane-departure me-2"></i>Санкт-Петербург</td>
+                            <td>14:20</td>
+                            <td><span class="badge bg-danger">Задержан</span></td>
+                            <td><span class="badge bg-secondary terminal-badge" data-terminal="A">A</span></td>
+                            <td>15:00</td>
+                        </tr>
+                        <tr data-terminal="B">
+                            <td><span class="badge bg-primary">S7 234</span></td>
+                            <td><i class="fas fa-plane-departure me-2"></i>Новосибирск</td>
+                            <td>15:30</td>
+                            <td><span class="badge bg-info">Регистрация</span></td>
+                            <td><span class="badge bg-secondary terminal-badge" data-terminal="B">B</span></td>
+                            <td>15:30</td>
+                        </tr>
+                        <tr data-terminal="C">
+                            <td><span class="badge bg-primary">U6 456</span></td>
+                            <td><i class="fas fa-plane-departure me-2"></i>Екатеринбург</td>
+                            <td>16:45</td>
+                            <td><span class="badge bg-success">Вылетел</span></td>
+                            <td><span class="badge bg-secondary terminal-badge" data-terminal="C">C</span></td>
+                            <td>16:40</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="row mb-5">
+            <div class="col-md-6 mb-3">
+                <div class="card h-100 border-0 shadow-sm">
+                    <div class="card-body text-center">
+                        <i class="fas fa-sort fa-2x mb-3 text-primary"></i>
+                        <h5 class="card-title">Сортировка</h5>
+                        <select class="form-select" id="sort-select">
+                            <option value="time">По времени</option>
+                            <option value="status">По статусу</option>
+                            <option value="destination">По направлению</option>
+                            <option value="terminal">По терминалу</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 mb-3">
+                <div class="card h-100 border-0 shadow-sm">
+                    <div class="card-body text-center">
+                        <i class="fas fa-search fa-2x mb-3 text-primary"></i>
+                        <h5 class="card-title">Поиск рейса</h5>
+                        <div class="input-group">
+                            <input type="text" class="form-control" id="flight-search" placeholder="Номер рейса или направление...">
+                            <button class="btn btn-primary" type="button" id="search-button">
+                                <i class="fas fa-search"></i>
+                            </button>
+                        </div>
+                        <small class="text-muted mt-2 d-block">Например: SU 1234 или Москва</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <section class="about-us">
+            <div class="about-us-header">
+                <a href="о нас.html" class="about-link"><h2>О нас</h2></a>
+            </div>
+            <div class="about-us-content">
+                <div class="about-item">
+                    <i class="fas fa-couch icon"></i>
+                    <h3>Комфорт</h3>
+                    <p>Дружелюбный и профессиональный персонал всегда готов помочь вам с любыми вопросами и потребностями, обеспечивая высокий уровень сервиса.</p>
+                </div>
+                <div class="about-item">
+                    <i class="fas fa-shield-alt icon"></i> 
+                    <h3>Безопасность</h3>
+                    <p>Приоритет нашего аэропорта — это безопасность пассажиров. Современные системы контроля и профессиональный персонал обеспечивают высокий уровень защиты.</p>
+                </div>
+                <div class="about-item">
+                    <i class="fas fa-wifi icon"></i> 
+                    <h3>Технологичность</h3>
+                    <p>В нашем аэропорту предлагаются кафе, рестораны, магазины Duty-Free, Wi-Fi и другие удобства, которые сделают ваше ожидание приятным.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-left">
+            <div class="language-switcher">
+                <p>Русский | Английский</p>
+            </div>
+        </div>
+        
+        <div class="social-media">
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-vk icon vk"></i></a>
+                <a href="#"><i class="fab fa-telegram-plane icon tg"></i></a>
+            </div>
+        </div>
+        
+        <div class="footer-right">
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i class="fas fa-phone-alt icon"></i>
+                    <span>8 (932) 564 76 98</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt icon"></i>
+                    <span>Улица Тигровая, 37</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
